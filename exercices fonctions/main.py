@@ -19,9 +19,6 @@ def afficher_table_multiplication(numero: int,valeur_min: int,valeur_max: int):
 
     for i in range(valeur_min,valeur_max+1):
         print(f"{numero} x {i} = {numero*i}")
-    return True
 
 
-
-
-afficher_table_multiplication(6,9,10)
+afficher_table_multiplication(6,1,10)

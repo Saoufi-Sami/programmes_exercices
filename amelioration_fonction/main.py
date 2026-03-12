@@ -7,7 +7,7 @@
 #   -> est_majeur()
 
 def est_majeur(age: int):
-    if age >= 0:
+    if age <= 0:
         return False
     # Vrai ou Faux (True/False)
     # si l'age >= 18 => True sinon False
