@@ -16,17 +16,23 @@
 # 4 questions
 
 
-def question(pays,choix1,choix2,choix3,choix4,bonne_reponse):
+def poser_question(pays,choix1,choix2,choix3,choix4,bonne_reponse):
+    global score
     print(f"Quelle est la capitale du pays : {pays} ?\n"
           f"(a) {choix1} \n"
           f"(b) {choix2} \n"
           f"(c) {choix3} \n"
           f"(d) {choix4} \n")
     reponse = input("Votre réponse : ")
+
     if reponse == bonne_reponse:
         print("Bonne réponse")
+        score += 1
+
     else:
         print("Mauvaise réponse")
+    print()
+
 
 nb_questions = 4
 
@@ -36,8 +42,15 @@ questions = [
     ("France", "Paris", "Lyon", "Marseille", "Nice", "a"),
     ("Espagne", "Madrid", "Barcelone", "Valence", "Séville", "a")
 ]
+score = 0
 for i in range(nb_questions):
-    question(*questions[i])
+    poser_question(*questions[i])
+
+print("Score final : ",score)
+
+
+
+
 
 
 # Un tuple est une structure de données en Python qui permet de stocker
