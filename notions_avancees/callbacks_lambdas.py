@@ -20,7 +20,7 @@ print("a",a,"b",b())'''
 
 
 
-def mult_callback(a,b):
+'''def mult_callback(a,b):
     return a*b
 
 def add_callback(a,b):
@@ -38,10 +38,26 @@ afficher_table(2,"x",mult_callback)
 print()
 afficher_table(2,"+",add_callback)
 print()
-afficher_table(2,"*",power_callback)
+afficher_table(2,"*",power_callback)'''
 
 # Au lieu de créer une fonction différente pour chaque opération,
 # on fait une fonction générique (afficher_table)
 # à laquelle on passe une fonction (callback) en paramètre.
 # Cette fonction callback sera appelée à l’intérieur pour faire le calcul.
 # Ça permet de réutiliser le même code avec des comportements différents.
+
+def afficher_table(n,operateur_str,operateur_cbk):
+    for i in range(1,10):
+        print(i,operateur_str,n,"=",operateur_cbk(i,n))
+
+
+afficher_table(2,"x",lambda a, b : a * b)
+print()
+afficher_table(2,"+",lambda a, b : a + b)
+print()
+afficher_table(2,"*",lambda a, b : pow(a, b))
+
+# Ici on utilise des lambda (fonctions rapides sans nom)
+# au lieu de définir des fonctions à part.
+# Ça permet d’écrire le callback directement, plus court et plus pratique.
+# lambda = fonction rapide écrite directement comme callback
