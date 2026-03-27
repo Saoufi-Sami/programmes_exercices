@@ -2,19 +2,23 @@
 
 def ajouter_pizzas_utilisateur(collection):
     p = input("Quelle pizza vous voulez ajouter ? ")
-    if pizza_existe(p,collection) :
+    if p.lower() in collection :
         print("ERREUR la Pizza existe deja")
     else:
         collection.append(p)
 
-def pizza_existe(e,collection):
+'''def pizza_existe(e,collection):
     if e in collection:
         return True
     else:
-        return False
-
+        return False'''
+#def tri_personnalise(e):
+#    return len(e)
 
 def afficher(collection):
+    #collection.sort(reverse=True)
+    #collection.sort(key=tri_personnalise)
+    #collection.sort(reverse=True,key=tri_personnalise)
     if not collection :
         print("AUCUNE PIZZA")
         return
@@ -34,3 +38,6 @@ afficher(pizzas)
 '''if p == "":
     ajouter_pizzas_utilisateur(collection)
 else:'''
+
+# lower() -> minuscules
+# upper() -> majuscules
